@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1734339266204,
+      "tag": "0000_needy_vampiro",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1734339914306,
+      "tag": "0001_warm_harrier",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1734340023623,
+      "tag": "0002_flashy_mother_askani",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1734349356853,
+      "tag": "0003_salty_ghost_rider",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1734357720624,
+      "tag": "0004_material_venom",
+      "breakpoints": true
+    }
+  ]
+}
