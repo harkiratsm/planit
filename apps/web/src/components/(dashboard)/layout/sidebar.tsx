@@ -9,12 +9,10 @@ import Link from 'next/link';
 import { ChevronLeft, LogOut, Settings } from 'lucide-react';
 import { signOut } from 'next-auth/react';
 import { useParams, usePathname } from 'next/navigation';
+import { UserSchema } from '@repo/drizzle/schema/type';
 type SidebarProps = {
   className?: string;
-  user?: {
-    name: string;
-    image: string;
-  };
+  user?: UserSchema
 };
 
 export default function Sidebar({ className, user }: SidebarProps) {

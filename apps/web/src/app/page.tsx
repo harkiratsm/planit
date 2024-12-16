@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { getAllTasks } from "@repo/lib/server-specific/all-tasks";
 import Sidebar from "@/components/(dashboard)/layout/sidebar";
 import TaskManagement from "./task-management-client";
+import { UserSchema } from "@repo/drizzle/schema/type";
 
 export default async function Dashboard() {
   const session = await auth();
@@ -18,7 +19,7 @@ export default async function Dashboard() {
   return (
 
       <div className="flex">
-            <Sidebar user={{ name: session?.user?.name ?? '', image: session?.user?.image ?? '' }}/>
+            <Sidebar user={session?.user as UserSchema}/>
             <main className="w-full flex-1 overflow-hidden p-4">
               <TaskManagement task={task} />
             </main>

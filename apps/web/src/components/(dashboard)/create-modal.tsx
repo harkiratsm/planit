@@ -28,11 +28,11 @@ interface CreateTaskModalProps {
   onClose: () => void   
   onAddTask: (task: Omit<
     Task, 
-    "id" | "createdAt" | "updatedAt" | "userId" | "deletedAt"
+    "id" | "createdAt" | "updatedAt" | "userId" | "deletedAt" | "endTime"
   >) => Promise<void> | void
   isCreatingTask: boolean
   editTask: (task:Omit<Task,
-    "createdAt" | "updatedAt" | "userId" | "deletedAt"
+    "createdAt" | "updatedAt" | "userId" | "deletedAt" | "endTime"
   >
   ) => Promise<void> | void
   taskToEdit?: Task | null
@@ -51,7 +51,7 @@ export function CreateTaskModal({
   const [title, setTitle] = useState("")   
   const [description, setDescription] = useState("")   
   const [priority, setPriority] = useState<"low" | "medium" | "high">("low")
-  const [status, setStatus] = useState<string>("pending")
+  const [status, setStatus] = useState<"pending" | "completed" | null>("pending")
 
   useEffect(() => {
     if (taskToEdit) {
@@ -75,14 +75,14 @@ export function CreateTaskModal({
         description,
         priority,
         status,
-        id: taskToEdit.id
+        id: taskToEdit.id,
       })
     } else { 
         await onAddTask({       
             title,       
             description,       
             priority,
-            status
+            status,
         }) 
     }
      

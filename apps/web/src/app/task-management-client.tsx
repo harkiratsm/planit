@@ -42,7 +42,7 @@ export default function TaskManagement({task}: {task: Task[]}) {
   }, [rowClicked])
 
 
-  const addTask = async (newTask: Task) => {
+  const addTask = async (newTask: Omit<Task, "id" | "userId" | "createdAt" | "updatedAt" | "endTime">) => {
     try {
       const createdTask = await createTask({
         title: newTask.title,
@@ -64,7 +64,7 @@ export default function TaskManagement({task}: {task: Task[]}) {
       }
   }
 
-  const editTask = async (taskToUpdate: Task) => {
+  const editTask = async (taskToUpdate: Omit<Task, "userId" | "createdAt" | "updatedAt" | "endTime">) => {
     try {
       const updatedTask = await updateTask({
         id: taskToUpdate.id,
