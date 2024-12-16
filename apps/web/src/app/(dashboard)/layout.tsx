@@ -1,6 +1,5 @@
 import { auth } from "@/auth";
 import Sidebar from "@/components/(dashboard)/layout/sidebar";
-import { UserSchema } from "@repo/drizzle/schema/type";
 import { redirect } from "next/navigation";
 import React from "react";
 

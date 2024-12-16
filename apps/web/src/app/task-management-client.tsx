@@ -18,7 +18,7 @@ export default function TaskManagement({task}: {task: Task[]}) {
   const { toast } = useToast()
 
   const { mutateAsync: createTask , isLoading: isCreatingTask } = trpc.task.createNote.useMutation({
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast({
         description: "Task created successfully",
         duration: 3000,
@@ -27,7 +27,7 @@ export default function TaskManagement({task}: {task: Task[]}) {
   })
 
   const { mutateAsync: updateTask, isLoading: isUpdatingTask } = trpc.task.updateTask.useMutation({
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast({
         description: "Task updated successfully",
         duration: 3000,
@@ -42,7 +42,7 @@ export default function TaskManagement({task}: {task: Task[]}) {
   }, [rowClicked])
 
 
-  const addTask = async (newTask: any) => {
+  const addTask = async (newTask: Task) => {
     try {
       const createdTask = await createTask({
         title: newTask.title,
@@ -64,7 +64,7 @@ export default function TaskManagement({task}: {task: Task[]}) {
       }
   }
 
-  const editTask = async (taskToUpdate: any) => {
+  const editTask = async (taskToUpdate: Task) => {
     try {
       const updatedTask = await updateTask({
         id: taskToUpdate.id,

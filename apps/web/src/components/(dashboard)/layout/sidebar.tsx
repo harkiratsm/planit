@@ -6,12 +6,15 @@ import { DashboardNav } from '@/components/navigation-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ChevronLeft, LogOut, Settings } from 'lucide-react';
+import { ChevronLeft, LogOut, Settings } from 'lucide-react';
 import { signOut } from 'next-auth/react';
 import { useParams, usePathname } from 'next/navigation';
 type SidebarProps = {
   className?: string;
-  user?: any;
+  user?: {
+    name: string;
+    image: string;
+  };
 };
 
 export default function Sidebar({ className, user }: SidebarProps) {
@@ -43,7 +46,7 @@ export default function Sidebar({ className, user }: SidebarProps) {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
                   <Avatar className="cursor-pointer size-6">
-                    <AvatarImage src={user?.image} alt={user?.name} />
+                    <AvatarImage src={user?.image ?? ""} alt={user?.name} />
                     <AvatarFallback>{user?.name?.charAt(0)}</AvatarFallback>
                   </Avatar>
           </DropdownMenuTrigger>

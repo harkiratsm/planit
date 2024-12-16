@@ -1,5 +1,5 @@
 'use client'
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Icons } from "./icons";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -15,11 +15,10 @@ const sideBarViews = ['workspace', 'accountSetting'];
 
 export const DashboardNav = ({ className, navItems }: DashboardNavProps ) => {
     const pathName = usePathname();
-    const { slug } = useParams() as { slug: string };
 
     const currentView = useMemo(()=>{
         return pathName.startsWith(`/account/settings`) ? 'accountSetting' : 'workspace'
-    },[slug, pathName])
+    },[ pathName])
 
     return (
         <div className={cn("pt-4", className)} >
@@ -33,7 +32,7 @@ export const DashboardNav = ({ className, navItems }: DashboardNavProps ) => {
                     )}
                     aria-hidden={currentView !== view}
                 >
-                {navItems[view].items(slug).map((item: NavItem, index: number) => {
+                {navItems[view].items().map((item: NavItem, index: number) => {
                     const Icon = Icons[item.icon || 'actions'];
                     return (
                         item.href && (

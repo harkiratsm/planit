@@ -11,14 +11,14 @@ export interface NavItem {
 export type NavItems = {
     [key: string]: {
         title?: string;
-        items: (slug:string) => NavItem[]            
+        items: () => NavItem[]            
     }
 }
 
 
 export const navItems: NavItems = {
     workspace: {
-        items: (slug) => 
+        items: () => 
             [
                 {
                     title : "Tasks",
@@ -51,7 +51,7 @@ export const navItems: NavItems = {
             ]
     },
     accountSetting : {
-        items: (slug) =>  [
+        items: () =>  [
             {
                 title : "General",
                 icon : "general",

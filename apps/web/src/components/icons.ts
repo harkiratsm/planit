@@ -1,4 +1,4 @@
-import { Activity, Clapperboard, Cog, CreditCard, Fingerprint, GitPullRequest, GitPullRequestArrow, Lightbulb, LucideIcon,  PlugZap,  Settings, Users, Workflow } from "lucide-react";
+import { Activity, Clapperboard, Cog, CreditCard, Fingerprint, GitPullRequestArrow, Lightbulb, LucideIcon,  PlugZap,  Settings, Users, Workflow } from "lucide-react";
 
 export type Icon = LucideIcon;
 
