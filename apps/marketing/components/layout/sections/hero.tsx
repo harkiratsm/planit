@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 const cardData = [
   {
@@ -28,7 +27,7 @@ type FeatureCardProps = {
 };
 
 
-const FeatureCard = ({ title, description, imageSrc, imageAlt }:FeatureCardProps ) => (
+const FeatureCard = ({ title, description }:FeatureCardProps ) => (
   <Card className="w-full max-w-md mx-auto shadow-md hover:shadow-lg transition-shadow duration-300">
     <CardHeader className="pb-4 overflow-hidden">
       <div className="relative w-full h-48 mb-4">

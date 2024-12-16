@@ -1,5 +1,5 @@
 "use client";
-import { ClipboardListIcon, MergeIcon, ServerCrash } from "lucide-react";
+import { MergeIcon } from "lucide-react";
 import React from "react";
 
 import { Button } from "../ui/button";
@@ -14,11 +14,11 @@ export const Navbar = () => {
             <MergeIcon className="h-6 w-6 text-primary" />
             <span className="font-bold text-primary text-lg sm:text-xl">PlanIt</span>
           </Link>
-            <Link href='https://planit-web.vercel.app/signin' target="_blank" className="flex items-center">
-              <Button className="bg-primary text-white hover:bg-primary/90 transition-colors">
-                Login
-              </Button>
-            </Link>
+          <Link href='https://planit-web.vercel.app/signin' target="_blank" className="flex items-center">
+            <Button className="bg-primary text-white hover:bg-primary/90 transition-colors">
+              Login
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

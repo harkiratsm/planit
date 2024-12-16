@@ -26,21 +26,15 @@ import { Switch } from "../ui/switch"
 interface CreateTaskModalProps {   
   isOpen: boolean   
   onClose: () => void   
-  onAddTask: (task: {
-    title: string, 
-    description?: string, 
-    priority?: "low" | "medium" | "high",
-    status?: string,
-    id?: string
-  }) => Promise<void> | void
+  onAddTask: (task: Omit<
+    Task, 
+    "id" | "createdAt" | "updatedAt" | "userId" | "deletedAt"
+  >) => Promise<void> | void
   isCreatingTask: boolean
-  editTask: (task:{
-    title: string, 
-    description?: string, 
-    priority?: "low" | "medium" | "high",
-    status?: string,
-    id?: string
-  }) => Promise<void> | void
+  editTask: (task:Omit<Task,
+    "createdAt" | "updatedAt" | "userId" | "deletedAt"
+  >
+  ) => Promise<void> | void
   taskToEdit?: Task | null
   isUpdatingTask?: boolean
 }
