@@ -72,7 +72,7 @@ export const HeroSection = () => {
             </h1>
           </div>
           <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-            {`Stay organized with  all your tasks in one place. PlanIt is a task management app that helps you organize tasks, collaborate with teams, and track progress in real-time. PlanIt is designed to help you stay on top of your day by organizing tasks into lists, categories, and priorities.`}
+            {`PlanIt is a task management app that helps you organize tasks, collaborate with teams, and track progress in real-time. `}
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
